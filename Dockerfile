@@ -20,6 +20,7 @@ ENV PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
 ENV LD_LIBRARY_PATH=/usr/local/lib
 ENV FLOOD_SECRET=password
 ENV CONTEXT_PATH=/
+ENV FLOOD_BASE_URI='/flood'
     
 RUN NB_CORES=${BUILD_CORES-`getconf _NPROCESSORS_CONF`} && \
  apk add --no-cache \
