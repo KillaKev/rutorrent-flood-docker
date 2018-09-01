@@ -1,5 +1,5 @@
 const CONFIG = {
-  baseURI: '/',
+  baseURI: '/flood',
   dbCleanInterval: 1000 * 60 * 60,
   dbPath: '/config/flood-db/',
   floodServerHost: '0.0.0.0',
