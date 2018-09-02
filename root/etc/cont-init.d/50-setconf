@@ -10,7 +10,7 @@ mkdir -p /config/tmp /detach_sess
 [[ ! -f /config/.autodl/autodl.cfg ]] && cp /defaults/autodl.cfg /config/.autodl/autodl.cfg
 [[ ! -f /usr/share/webapps/rutorrent/plugins/autodl-irssi/conf.php ]] && cp /defaults/conf.php /usr/share/webapps/rutorrent/plugins/autodl-irssi/conf.php
 [[ ! -f /config/flood/config.js ]] && cp /defaults/config.js /config/flood/config.js
-[[ ! -L /usr/flood/config.js ]] && ln -s /config/flood/config.js /usr/flood/config.js && sed -i -e "s|<FLOOD_SECRET>|$FLOOD_SECRET|g" /config/flood/config.js && sed -i -e "s|<CONTEXT_PATH>|$CONTEXT_PATH|g" /config/flood/config.js
+[[ ! -L /usr/flood/config.js ]] && ln -s /config/flood/config.js /usr/flood/config.js && sed -i -e "s|<FLOOD_SECRET>|$FLOOD_SECRET|g" /config/flood/config.js && sed -i -e "s|<CONTEXT_PATH>|$CONTEXT_PATH|g" /config/flood/config.js && sed -i -e "s|<FLOOD_BASE_URI>|$FLOOD_BASE_URI|g" /config/flood/config.js
 
 # set perms
 chown abc:abc -R /config /detach_sess

@@ -1,12 +1,12 @@
 FROM lsiobase/alpine:3.8
 
-MAINTAINER romancin
+MAINTAINER killakev
 
 # set version label
 ARG BUILD_DATE
 ARG VERSION
 ARG BUILD_CORES
-LABEL build_version="Romancin version:- ${VERSION} Build-date:- ${BUILD_DATE}"
+LABEL build_version="killakev version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 
 # package version
 ARG MEDIAINF_VER="18.05"
@@ -21,7 +21,7 @@ ENV LD_LIBRARY_PATH=/usr/local/lib
 ENV FLOOD_SECRET=password
 ENV CONTEXT_PATH=/
 ENV FLOOD_BASE_URI='/flood'
-    
+
 RUN NB_CORES=${BUILD_CORES-`getconf _NPROCESSORS_CONF`} && \
  apk add --no-cache \
 	bash-completion \
@@ -31,7 +31,7 @@ RUN NB_CORES=${BUILD_CORES-`getconf _NPROCESSORS_CONF`} && \
         geoip \
         gzip \
         logrotate \
-        nginx \
+	nginx \
         dtach \
         tar \
         unrar \
@@ -197,7 +197,7 @@ wget -qO- https://github.com/rakshasa/rtorrent/archive/${RTORRENT_VER}.tar.gz | 
  mkdir /usr/flood && \
  cd /usr/flood && \
  git clone https://github.com/jfurrow/flood . && \
- cp config.template.js config.js && \
+ wget -q https://raw.githubusercontent.com/KillaKev/rutorrent-flood-docker/master/root/defaults/config.js && \
  npm install -g node-gyp && \
  npm install && \
  npm cache clean --force && \
